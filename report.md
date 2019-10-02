@@ -92,16 +92,16 @@ highlyCorrelated = findCorrelation(cor_mat, cutoff=0.75)
 names(trainData)[highlyCorrelated]
 ```
 ```
-[1] "accel_belt_z"      "roll_belt"        
-[3] "accel_belt_y"      "total_accel_belt" 
-[5] "accel_dumbbell_z"  "accel_belt_x"     
-[7] "pitch_belt"        "magnet_dumbbell_x"
-[9] "accel_dumbbell_y"  "magnet_dumbbell_y"
-[11] "accel_arm_x"       "accel_dumbbell_x" 
-[13] "accel_arm_z"       "magnet_arm_y"     
-[15] "magnet_belt_z"     "accel_forearm_y"  
-[17] "gyros_forearm_y"   "gyros_dumbbell_x" 
-[19] "gyros_dumbbell_z"  "gyros_arm_x"
+##	[1] "accel_belt_z"      "roll_belt"        
+##	[3] "accel_belt_y"      "total_accel_belt" 
+##	[5] "accel_dumbbell_z"  "accel_belt_x"     
+##	[7] "pitch_belt"        "magnet_dumbbell_x"
+##	[9] "accel_dumbbell_y"  "magnet_dumbbell_y"
+##	[11] "accel_arm_x"       "accel_dumbbell_x" 
+##	[13] "accel_arm_z"       "magnet_arm_y"     
+##	[15] "magnet_belt_z"     "accel_forearm_y"  
+##	[17] "gyros_forearm_y"   "gyros_dumbbell_x" 
+##	[19] "gyros_dumbbell_z"  "gyros_arm_x"
 ```
 
 ```r
@@ -117,7 +117,7 @@ cmtree <- confusionMatrix(predictTreeMod1, testData$classe)
 cmtree
 ```
 ```
-Confusion Matrix and Statistics
+##	Confusion Matrix and Statistics
 
           Reference
 Prediction   A   B   C   D   E
@@ -179,16 +179,16 @@ modGBM  <- train(classe ~ ., data=trainData, method = "gbm", trControl = control
 modGBM$finalModel
 ```
 ```
-A gradient boosted model with multinomial loss function.
-150 iterations were performed.
-There were 52 predictors of which 52 had non-zero influence.
+##	A gradient boosted model with multinomial loss function.
+	150 iterations were performed.
+	There were 52 predictors of which 52 had non-zero influence.
 ```
 
 ```r
 print(modGBM)
 ```
 ```
-Stochastic Gradient Boosting 
+##	Stochastic Gradient Boosting 
 
 13737 samples
    52 predictor
@@ -227,7 +227,7 @@ cmGBM <- confusionMatrix(predictGBM, testData$classe)
 cmGBM
 ```
 ```
-Confusion Matrix and Statistics
+##	Confusion Matrix and Statistics
 
           Reference
 Prediction    A    B    C    D    E
